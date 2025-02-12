@@ -1,0 +1,33 @@
+[project]
+name = "agent"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Shamas liaqat", email = "shamasliaqat245@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "crew>=0.9.2",
+    "crewai>=0.100.1",
+    "langchain>=0.3.18",
+    "langchain-google-genai>=2.0.9",
+    "litellm>=1.59.8",
+    "openai>=1.61.1",
+]
+
+[project.scripts]
+agent = "agent:main"
+agent_test= "agent.tests.test_config_and_tools:test_api_tools"
+agent_test2= "agent.tests.test_query_analyzer:test_query_analyzer"
+agent_test3= "agent.tests.test_summarizer:test_summarizer"
+agent_test4="agent.tests.conversation_manager_test:test_memory"
+agent_test5="agent.tests.test_data_fetcher:test_data_fetcher"
+tool_test="agent.tests.api_tools_testing:test_api_tools"
+main_test="agent.crew:main"
+test="agent.tests.testing_litellm:factory"
+
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
